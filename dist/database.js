@@ -2,8 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startConnection = void 0;
 const mongoose_1 = require("mongoose");
+const UrlProd = "mongodb+srv://admin:admin1234@cluster0.zojpg.mongodb.net/rokoop_db?retryWrites=true&w=majority";
+const UrlDev = "mongodb://localhost:27017/photo-gallery-db";
 async function startConnection() {
-    await mongoose_1.connect('mongodb://localhost:27017/photo-gallery-db', {
+    await mongoose_1.connect(UrlProd, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false

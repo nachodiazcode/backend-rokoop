@@ -2,16 +2,16 @@ import multer from 'multer'
 import aws from 'aws-sdk'
 import { v4 as uuidv4 } from 'uuid'
 import path from 'path'
+import dotenv from 'dotenv' ;
 
 //llamamos a S3 
 const multerS3 = require('multer-s3')
 
 //configuramos s3
 const s3 = new aws.S3({
-  secretAccessKey: 'q0kvS9bF2ZnR0Rkm+7LzI8iElylo1y1qU0wo6IxM',
-    accessKeyId: 'AKIAVBZRGP25SB6GGJWD',
+  secretAccessKey: process.env.S3_SECRET_KEY,
+    accessKeyId: process.env.S3_ACCESS_KEY_ID
 })
-
 
 const upload = multer({
   

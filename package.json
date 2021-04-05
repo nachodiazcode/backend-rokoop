@@ -26,6 +26,7 @@
   "dependencies": {
     "aws-sdk": "^2.790.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "file-type": "^16.0.1",
     "fs-extra": "^9.0.1",

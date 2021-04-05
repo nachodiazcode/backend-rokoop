@@ -12,4 +12,3 @@ export async function startConnection(){
 
     console.log('Database is connected')
 }
-

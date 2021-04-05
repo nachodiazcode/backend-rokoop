@@ -11,8 +11,8 @@ const path_1 = __importDefault(require("path"));
 const multerS3 = require('multer-s3');
 //configuramos s3
 const s3 = new aws_sdk_1.default.S3({
-    secretAccessKey: 'q0kvS9bF2ZnR0Rkm+7LzI8iElylo1y1qU0wo6IxM',
-    accessKeyId: 'AKIAVBZRGP25SB6GGJWD',
+    secretAccessKey: process.env.S3_SECRET_KEY,
+    accessKeyId: process.env.S3_ACCESS_KEY_ID
 });
 const upload = multer_1.default({
     storage: multerS3({

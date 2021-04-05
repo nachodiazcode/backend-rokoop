@@ -43,6 +43,9 @@ app.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
+app.get('/', (req, res) => {
+    res.status(200).get(`<h1>ROKOOP BACKEND</h1>`);
+});
 //routes
 app.use('/api', index_1.default);
 app.use('/uploads', express_1.default.static(path_1.default.resolve('uploads')));

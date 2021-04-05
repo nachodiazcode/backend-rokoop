@@ -5,6 +5,8 @@ import { createPhoto, getPhotos, getPhoto, deletePhoto, updatePhoto } from './..
 
 import multer from './../libs/multer'
 
+
+
 router.route('/photos') 
     .get(getPhotos)
     .post(multer.single('image'), createPhoto)

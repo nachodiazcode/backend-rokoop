@@ -29,6 +29,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res)=>{
+  res.status(200).get(`<h1>ROKOOP BACKEND</h1>`);
+})
+
 //routes
 app.use('/api', indexRoutes);
 app.use('/uploads', express.static(path.resolve('uploads')))

@@ -17,5 +17,4 @@ router.route('/photo/:id')
     .delete(deletePhoto)
     .put(updatePhoto)
 
-
 export default router ;

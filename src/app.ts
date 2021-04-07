@@ -16,6 +16,9 @@ import indexRoutes from './routes/index'
 // settings
 app.set('port', process.env.PORT ||  4000) ;
 
+// router statics
+app.use('/static', express.static(__dirname + '/public'));
+
 // middlewares
 app.use(morgan('dev'));
 app.use(express.json());

@@ -4,6 +4,12 @@ import fs from 'fs-extra'
 
 import Photo from './../models/Photo'
 
+export async function getApiHome(req: Request, res: Response): Promise<Response> {
+
+    return res.status(200).send('esto esta funcioando')
+
+}
+
 export async function getPhotos(req: Request, res: Response): Promise<Response> {
 
     const photos = await Photo.find()

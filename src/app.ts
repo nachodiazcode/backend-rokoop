@@ -29,8 +29,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/api', (req, res)=>{
-  res.status(200).get(`<h1>ROKOOP BACKEND</h1>`);
+app.get('/', (req, res)=>{
+  res.status(200).get(`<h2>this is the rokoop backend</h2>`);
 })
 
 //routes

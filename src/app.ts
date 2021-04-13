@@ -14,7 +14,7 @@ const app = express()
 import indexRoutes from './routes/index'
 
 // settings
-app.set('port', process.env.PORT ||  4000) ;
+app.set('port', process.env.PORT || 3000) ;
 
 // router statics
 app.use('/static', express.static(__dirname + '/public'));

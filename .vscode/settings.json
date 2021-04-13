@@ -14,5 +14,10 @@
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#b52e3199",
         "titleBar.inactiveForeground": "#e7e7e799"
-    }
+    },
+    "workbench.editorAssociations": [
+
+
+    
+    ]
 }

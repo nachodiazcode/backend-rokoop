@@ -32,6 +32,8 @@ const app = express_1.default();
 const index_1 = __importDefault(require("./routes/index"));
 // settings
 app.set('port', process.env.PORT || 4000);
+// router statics
+app.use('/static', express_1.default.static(__dirname + '/public'));
 // middlewares
 app.use(morgan_1.default('dev'));
 app.use(express_1.default.json());
@@ -42,9 +44,6 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
-});
-app.get('/', (req, res) => {
-    res.status(200).get(`<h1>ROKOOP BACKEND</h1>`);
 });
 //routes
 app.use('/api', index_1.default);

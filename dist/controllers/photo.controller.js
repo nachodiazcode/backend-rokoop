@@ -3,8 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updatePhoto = exports.deletePhoto = exports.createPhoto = exports.getPhoto = exports.getPhotos = void 0;
+exports.updatePhoto = exports.deletePhoto = exports.createPhoto = exports.getPhoto = exports.getPhotos = exports.getApiHome = void 0;
 const Photo_1 = __importDefault(require("./../models/Photo"));
+async function getApiHome(req, res) {
+    return res.status(200).send('esto esta funcioando');
+}
+exports.getApiHome = getApiHome;
 async function getPhotos(req, res) {
     const photos = await Photo_1.default.find();
     return res.json(photos);

@@ -7,6 +7,8 @@ const express_1 = require("express");
 const router = express_1.Router();
 const photo_controller_1 = require("./../controllers/photo.controller");
 const multer_1 = __importDefault(require("./../libs/multer"));
+router.route('/')
+    .get(photo_controller_1.getApiHome);
 router.route('/photos')
     .get(photo_controller_1.getPhotos)
     .post(multer_1.default.single('image'), photo_controller_1.createPhoto);

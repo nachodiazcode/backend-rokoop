@@ -14,11 +14,9 @@ const app = express()
 import indexRoutes from './routes/index'
 
 // settings
-app.set('port', process.env.PORT || 8080) ;
+app.set('port', process.env.PORT || 80) ;
 
 // router statics
-
-
 
 
 // middlewares
@@ -34,7 +32,6 @@ app.use((req, res, next) => {
   res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
-
 
 
 app.use(express.static(path.resolve(__dirname + '/public')));

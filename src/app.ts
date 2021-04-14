@@ -14,14 +14,17 @@ const app = express()
 import indexRoutes from './routes/index'
 
 // settings
-app.set('port', process.env.PORT || 3000) ;
+app.set('port', process.env.PORT || 8080) ;
 
 // router statics
-app.use('/static', express.static(__dirname + '/public'));
+
+
+
 
 // middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -33,9 +36,11 @@ app.use((req, res, next) => {
 });
 
 
-//routes
-app.use('/api', indexRoutes);
-app.use('/uploads', express.static(path.resolve('uploads')))
 
+app.use(express.static(path.resolve(__dirname + '/public')));
+
+//routes
+app.use('/', indexRoutes);
+app.use('/uploads', express.static(path.resolve('uploads')))
 
 export default app ;

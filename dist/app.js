@@ -31,7 +31,7 @@ dotenv.config();
 const app = express_1.default();
 const index_1 = __importDefault(require("./routes/index"));
 // settings
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 8080);
 // router statics
 app.use('/static', express_1.default.static(__dirname + '/public'));
 // middlewares
@@ -46,6 +46,6 @@ app.use((req, res, next) => {
     next();
 });
 //routes
-app.use('/api', index_1.default);
+app.use('/', index_1.default);
 app.use('/uploads', express_1.default.static(path_1.default.resolve('uploads')));
 exports.default = app;

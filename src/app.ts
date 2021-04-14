@@ -33,7 +33,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
+//call public folder
 app.use(express.static(path.resolve(__dirname + '/public')));
 
 //routes

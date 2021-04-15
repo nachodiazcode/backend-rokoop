@@ -14,7 +14,7 @@ const app = express()
 import indexRoutes from './routes/index'
 
 // settings
-app.set('port', process.env.PORT || 80) ;
+app.set('port', process.env.PORT || 3000) ;
 
 // router statics
 

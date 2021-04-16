@@ -1,4 +1,7 @@
 import { Router } from 'express';
+import aws from 'aws-sdk'
+require('dotenv').config();
+
 const router = Router();
 
 import { createPhoto, getPhotos, getPhoto, deletePhoto, updatePhoto } from './../controllers/photo.controller'

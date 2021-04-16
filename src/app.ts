@@ -4,6 +4,7 @@ import path from 'path'
 import cors from 'cors';
 
 import * as dotenv from "dotenv";
+import aws from 'aws-sdk'
 
 
 import fs from 'fs';

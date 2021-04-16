@@ -5,11 +5,14 @@ import cors from 'cors';
 
 import * as dotenv from "dotenv";
 
-dotenv.config();
 
 import fs from 'fs';
 
 const app = express()
+
+require('dotenv').config();
+
+dotenv.config();
 
 import indexRoutes from './routes/index'
 

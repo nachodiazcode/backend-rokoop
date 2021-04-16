@@ -13,7 +13,7 @@ const app = express()
 
 import indexRoutes from './routes/index'
 
-app.set('port', process.env.PORT || 3000) ;
+app.set('port', process.env.PORT || 80) ;
 
 // middlewares
 app.use(morgan('dev'));

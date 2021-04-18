@@ -6,18 +6,18 @@ import cors from 'cors';
 import * as dotenv from "dotenv";
 import aws from 'aws-sdk'
 
-
 import fs from 'fs';
 
 const app = express()
 
 require('dotenv').config();
 
-dotenv.config();
-
 import indexRoutes from './routes/index'
 
-app.set('port', process.env.PORT || 80) ;
+app.set('port', process.env.PORT) ;
+app.set('aws_access_key_id', process.env.aws_access_key_id);
+app.set('aws_secret_key', process.env.aws_secret_access_key);
+
 
 // middlewares
 app.use(morgan('dev'));

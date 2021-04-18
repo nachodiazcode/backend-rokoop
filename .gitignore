@@ -171,6 +171,6 @@ temp/
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,node
 .vercel
 
-.env
-.env.test
-.env*.local
+# .env
+# .env.test
+# .env*.local

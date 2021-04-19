@@ -1,15 +1,12 @@
 import { Router } from 'express';
-import aws from 'aws-sdk'
 
-
-require('dotenv').config();
+require('dotenv').config({path: './../../.env'});
 
 const router = Router();
 
 import { createPhoto, getPhotos, getPhoto, deletePhoto, updatePhoto } from './../controllers/photo.controller'
 
 import multer from './../libs/multer'
-
 
 router.route('/photos') 
     .get(getPhotos)

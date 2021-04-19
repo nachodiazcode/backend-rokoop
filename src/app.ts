@@ -10,8 +10,6 @@ import fs from 'fs';
 
 const app = express()
 
-require('dotenv').config();
-
 import indexRoutes from './routes/index'
 
 app.set('port', process.env.PORT) ;

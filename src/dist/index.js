@@ -9,7 +9,7 @@ async function main() {
     database_1.startConnection();
     app_1.default.listen(app_1.default.get('port'));
     console.log('Server on port ', app_1.default.get('port'));
-    console.log('access_key', app_1.default.get('aws_access_key_id'));
-    console.log('secret_key', app_1.default.get('aws_secret_key'));
+    console.log('access_key', app_1.default.get('S3_ACCESS_KEY_ID'));
+    console.log('secret_key', app_1.default.get('S3_SECRET_KEY'));
 }
 main();

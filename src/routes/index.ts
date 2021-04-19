@@ -1,6 +1,8 @@
 import { Router } from 'express';
 
-require('dotenv').config({path: './../../.env'});
+const env = require('dotenv');
+
+require(env).config();
 
 const router = Router();
 

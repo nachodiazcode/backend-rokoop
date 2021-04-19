@@ -8,8 +8,8 @@ const app = express()
 import indexRoutes from './routes/index'
 
 app.set('port', process.env.PORT) ;
-app.set('aws_access_key_id', process.env.aws_access_key_id);
-app.set('aws_secret_key', process.env.aws_secret_access_key);
+app.set('aws_access_key_id', process.env.S3_ACCESS_KEY_ID);
+app.set('aws_secret_key', process.env.S3_SECRET_KEY);
 
 
 // middlewares

@@ -10,8 +10,8 @@ const cors_1 = __importDefault(require("cors"));
 const app = express_1.default();
 const index_1 = __importDefault(require("./routes/index"));
 app.set('port', process.env.PORT);
-app.set('aws_access_key_id', process.env.aws_access_key_id);
-app.set('aws_secret_key', process.env.aws_secret_access_key);
+app.set('aws_access_key_id', process.env.S3_ACCESS_KEY_ID);
+app.set('aws_secret_key', process.env.S3_SECRET_KEY);
 // middlewares
 app.use(morgan_1.default('dev'));
 app.use(express_1.default.json());

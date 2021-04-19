@@ -8,7 +8,6 @@ const morgan_1 = __importDefault(require("morgan"));
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const app = express_1.default();
-require('dotenv').config();
 const index_1 = __importDefault(require("./routes/index"));
 app.set('port', process.env.PORT);
 app.set('aws_access_key_id', process.env.aws_access_key_id);

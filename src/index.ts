@@ -1,6 +1,8 @@
 import app from './app'
 import { startConnection } from './database'
 
+require('dotenv').config();
+
 async function main(){
     startConnection();
     app.listen(app.get('port'));

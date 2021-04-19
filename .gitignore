@@ -138,7 +138,7 @@ typings/
 storybook-static
 
 # rollup.js default build output
-dist/
+# dist/
 
 # Gatsby files
 .cache/
@@ -169,7 +169,7 @@ tmp/
 temp/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,node
-.vercel
+# .vercel
 
 # .env
 # .env.test

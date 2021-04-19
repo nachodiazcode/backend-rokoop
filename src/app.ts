@@ -3,12 +3,9 @@ import morgan from 'morgan'
 import path from 'path'
 import cors from 'cors';
 
-import * as dotenv from "dotenv";
-import aws from 'aws-sdk'
-
-import fs from 'fs';
-
 const app = express()
+
+require('dotenv').config();
 
 import indexRoutes from './routes/index'
 

@@ -1,9 +1,5 @@
 import { Router } from 'express';
 
-const env = require('dotenv');
-
-require(env).config();
-
 const router = Router();
 
 import { createPhoto, getPhotos, getPhoto, deletePhoto, updatePhoto } from './../controllers/photo.controller'

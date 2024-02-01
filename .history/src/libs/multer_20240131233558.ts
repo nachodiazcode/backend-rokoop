@@ -18,18 +18,22 @@ const upload = multer({
   
   storage: multerS3({
     s3: s3,
-    dirname: '/',
-    bucket: 'galleryblog',
-    metadata: (req: any, file: any, cb: any) => {
+    bucket: 'iddux-images',
+    acl: 'public-read',
+    metadata: function(req, file, cb) {
       cb(null, Object.assign({}, req.body));
     },
-    key: (req: any, file: any, cb: any) => {
-      cb(null, uuidv4() + path.basename(file.originalname));
-    },
-    filename: (req: any, file: any, cb: any) => {
-      cb(null, `${file.filename} ${Date.now()}.${file.mimetype.split('/')[1]}`);
+    key: function(req, file, cb) {
+      cb(null, uuidv4() + file.originalname);
     }
-  })
+  }),
+  limits: { fileSize: Infinity },
+  fileFilter: function(req, file, cb) {
+    if (!file.originalname.match(/\.(jpg|jpeg|png|webp|avif|gif|bmp)$/i)) {
+      return cb(new Error('Solo se permiten imágenes'));
+    }
+    cb(null, true);
+  }
 })
 
 

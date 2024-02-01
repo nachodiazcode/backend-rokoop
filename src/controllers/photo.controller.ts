@@ -26,29 +26,32 @@ export async function getPhoto(req: Request, res: Response): Promise<Response> {
  
 }
 
-export async function createPhoto(req:any, res: Response): Promise<Response> {
+export async function createPhoto(req: any, res: Response): Promise<Response> {
+    try {
+        const { title, description } = req.body;
 
-    const { title, description } = req.body;
-    console.log(req.file)
-    const newPhoto = {
-        title: title,
-        description: description,
-        imagePath: req.file.location
+        // Verificar si req.file existe
+        if (!req.file) {
+            return res.status(400).json({ message: 'No file provided' });
+        }
+
+        const newPhoto = {
+            title: title,
+            description: description,
+            imagePath: req.file.location
+        }
+
+        const photo = new Photo(newPhoto);
+        await photo.save();
+
+        return res.json({
+            message: 'Photo successfully saved',
+            photo
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Internal Server Error' });
     }
-
-    const photo =  new Photo(newPhoto);
-    await photo.save();
-    return res.json({
-        message: 'Photo successfully saved',
-        photo
-    })
-
-    console.log(req.body)
-
-    return res.json({
-        messagge: 'photo is saved'
-    })
-
 }
 
 export async function deletePhoto(req: Request, res: Response): Promise < Response > {

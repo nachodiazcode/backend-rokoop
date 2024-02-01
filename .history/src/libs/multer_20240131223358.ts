@@ -2,6 +2,7 @@ import multer from 'multer'
 import aws from 'aws-sdk'
 import { v4 as uuidv4 } from 'uuid'
 import path from 'path'
+import dotenv from 'dotenv' ;
 
 require('dotenv').config();
 
@@ -18,17 +19,20 @@ const upload = multer({
   
   storage: multerS3({
     s3: s3,
-    dirname: '/',
+    acl: 'public-read',
+    dirname:'/',
     bucket: 'galleryblog',
-    metadata: (req: any, file: any, cb: any) => {
-      cb(null, Object.assign({}, req.body));
+  
+    metadata: function (req:any, file:any, cb:any) {
+      cb(null, Object.assign({},req.body));
     },
-    key: (req: any, file: any, cb: any) => {
+    key: function (req:any, file:any, cb:any) {
       cb(null, uuidv4() + path.basename(file.originalname));
     },
-    filename: (req: any, file: any, cb: any) => {
+    filename: (req:any, file:any,cb:any)=>{
       cb(null, `${file.filename} ${Date.now()}.${file.mimetype.split('/')[1]}`);
     }
+    
   })
 })
 

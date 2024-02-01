@@ -3,13 +3,17 @@ import morgan from 'morgan'
 import path from 'path'
 import cors from 'cors';
 
+require('dotenv').config();
+const AWS = require('aws-sdk')
+
 const app = express()
 
 import indexRoutes from './routes/index'
 
-app.set('port', process.env.PORT) ;
-app.set('aws_access_key_id', process.env.S3_ACCESS_KEY_ID);
-app.set('aws_secret_key', process.env.S3_SECRET_KEY);
+AWS.config.update({
+  accessKeyId: process.env.S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.S3_SECRET_KEY
+})
 
 
 // middlewares

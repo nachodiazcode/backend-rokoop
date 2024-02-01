@@ -1,23 +1,31 @@
 {
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#d04649",
+        "activityBar.activeBackground": "#437955",
         "activityBar.activeBorder": "#37cb34",
-        "activityBar.background": "#d04649",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#37cb34",
-        "activityBarBadge.foreground": "#15202b",
-        "statusBar.background": "#b52e31",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#d04649",
-        "titleBar.activeBackground": "#b52e31",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#b52e3199",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "activityBar.background": "#437955",
+        "statusBar.background": "#31583e",
+        "statusBarItem.hoverBackground": "#437955",
+        "titleBar.activeBackground": "#31583e",
+        "titleBar.inactiveBackground": "#31583e99",
+        "editorError.foreground": "#000000ff",
+        "editorGroup.border": "#437955",
+        "editorInfo.foreground": "#000000ff",
+        "editorWarning.foreground": "#000000ff",
+        "panel.border": "#437955",
+        "sash.hoverBorder": "#437955",
+        "sideBar.border": "#437955",
+        "statusBar.border": "#31583e",
+        "statusBar.debuggingBackground": "#58314b",
+        "statusBar.debuggingBorder": "#58314b",
+        "statusBarItem.remoteBackground": "#31583e",
+        "tab.activeBorder": "#437955",
+        "titleBar.border": "#31583e"
     },
     "workbench.editorAssociations": [
 
 
     
-    ]
+    ],
+    "jira-plugin.workingProject": "",
+    "peacock.color": "#31583E"
 }
